@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApplication12.Model.ViewModel
+{
+    public class LoginVM
+    {
+
+        [Required(ErrorMessage = "Mail Requrid")]
+        [EmailAddress(ErrorMessage = "U Must Enter Valid mail ")]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Password Requrid")]
+        [DataType(DataType.Password)]
+        [MinLength(3, ErrorMessage = "Min Length 3 ")]
+        public string Password { get; set; }
+
+        public bool RememberMe { get; set; }
+    }
+}
